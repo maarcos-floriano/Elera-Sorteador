@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elera | Sorteador</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    <main>
+
+        <h1 id="titulo" onclick="">
+            <div class="background-dynamic class-piscar"></div>
+            Sorteador
+        </h1>
+
+        <section>
+
+            <div class="container-etapas">
+
+                <div class="etapas">
+
+                    <div class="celula">
+                        <div class="checkAtivo" id="divCheckInserir">
+                            <i class="fa fa-check iconAtivo" id="iconChekInserir"></i>
+                        </div>
+                        <p>Inserir <b>itens</b></p>
+                    </div>
+                    <div class="celula">
+                        <div class="checkInativo" id="divCheckEscolha">
+                            <i class="fa fa-check iconInativo" id="iconCheckEscolha"></i>
+                        </div>
+                        <p>Escolha <b>quantidade</b></p>
+                    </div>
+                    <div class="celula">
+                        <div class="checkInativo" id="divCheckSorteio">
+                            <i class="fa fa-check iconInativo" id="iconCheckSorteio"></i>
+                        </div>
+                        <p>Sorteio <b>concluído</b></p>
+                    </div>
+                
+                </div>
+                  
+            </div>
+
+            <div class="container-entradas">
+
+                <div class="entradas" id="insert_itens" style="display: flex;">
+
+                    <div class="rotulo">
+                        <p>Escreva os itens</p>
+                        <span>*Separados por linha</span>
+                    </div>
+                    <textarea id="txtDados" wrap="soft"></textarea>
+                    <div class="rotulo">
+                        <p>Upload do arquivo</p>
+                        <span>*.CSV</span>
+                    </div>
+                    <div class="arquivo">
+                        <label for="iptArquivo">
+                            Escolher Arquivo
+                            <input type="file" id="iptArquivo" accept="text/csv">
+                        </label>
+                    </div>
+                    <button onclick="mudarTela()">Continuar</button>
+
+                </div>
+
+                <div class="entradas" id="qtd_sortear" style="display: none;">
+
+                    <div class="rotulo">
+                        <p>Quantidade de Itens</p>
+                        <span>que deseja sortear</span>
+                    </div>
+                    <input type="number" id="qtdItensSorteados">
+                    <button onclick="sortear()">Sortear</button>
+
+                </div>
+
+                <div class="entradas" id="resultado" style="display: none;">
+                        
+                        <div class="rotulo">
+                            <p>Resultado do Sorteio</p>
+                        </div>
+                        <div class="resultado" id="listaDeGanhadores">
+                            <p>Lista Vazia</p>
+                        </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <span>elera.</span>
+    </main>
+
+    <div class="pop-up" style="display: none;">
+        <div id="alerta">
+            <div class="btn-fechar"><i class="fa-solid fa-xmark"></i></div>
+            <div class="text-alerta">
+                <h3><b>Atenção</b></h3>
+                <p>Presta atenção</p>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="./js/script.js"></script>

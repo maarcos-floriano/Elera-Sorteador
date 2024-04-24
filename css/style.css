@@ -1,0 +1,416 @@
+@font-face {
+    font-family: Product-Sans-Bold;
+    src: url('./assets/fonts/Product\ Sans\ Bold.ttf');
+}
+@font-face {
+    font-family: Product-Sans-Bold-Italic;
+    src: url('./assets/fonts/Product\ Sans\ Bold\ Italic.ttf');
+}
+@font-face {
+    font-family: Product-Sans-Italic;
+    src: url('./assets/fonts/Product\ Sans\ Italic.ttf');
+}
+@font-face {
+    font-family: Product-Sans-Regular;
+    src: url('./assets/fonts/Product\ Sans\ Regular.ttf');
+}
+
+:root {
+    --bold: Product-Sans-Bold;
+    --bold-italic: Product-Sans-Bold-Italic;
+    --italic: Product-Sans-Italic;
+    --regular: Product-Sans-Regular;
+
+    --azul: rgb(67, 100, 130);
+    --branquinho: rgb(202, 202, 202);
+    --branco: rgb(245, 245, 245);
+    --cinza: rgb(89, 89, 89);
+    --cinzaClaro: rgb(228, 228, 228);
+    --cinzaClaroOpaco: rgba(230, 230, 230, 0.64);
+}
+
+* {
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: Product-Sans-Regular;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url('./assets/images/Fundo\ Elera\ -\ T_Sant.png');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 80%;
+    height: 90%;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+main > h1 {
+    font-size: 85px;
+    font-family: var(--bold);
+
+    width: fit-content;
+
+    margin-bottom: 15px;
+
+    color: var(--cinza);
+}
+
+section {
+    width: 100%;
+    height: 85%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-etapas {
+    width: 310px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.etapas {
+    width: 100%;
+    height: 300px;
+}
+
+.celula {
+    width: 100%;
+    height: 33%;
+
+    display: flex;
+    align-items: center;
+}
+
+.checkInativo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--cinzaClaro);
+}
+
+.iconInativo {
+    font-size: 29px;
+
+    color: var(--azul);
+}
+
+.checkAtivo {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--azul);
+}
+
+.iconAtivo {
+    font-size: 29px;
+
+    color: var(--branco);
+}
+
+.check > input {
+    display: none;
+}
+
+
+.celula > p {
+    margin-left: 25px;
+
+    font-size: 20px;
+
+    color: var(--cinza);
+}
+
+.container-entradas {
+    width: calc(100% - 310px);
+    
+    padding: 40px 0;
+    
+    background-color: var(--cinzaClaroOpaco);
+
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.entradas {
+    width: 85%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.entradas > .rotulo {
+    width: 100%;
+    
+    margin-bottom: 10px;
+
+    color: var(--cinza);
+
+    line-height: .9;
+
+    cursor: default;
+
+    user-select: none;
+}
+
+.entradas > .rotulo > p {
+    font-family: var(--bold);
+    font-size: 22px;
+}
+
+.entradas > .rotulo > span {
+    font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    min-height: 170px;
+
+    resize: none;
+
+    padding: 10px 15px;
+    font-size: 19px;
+
+    background-color: var(--cinzaClaro);
+        
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 30px;
+    
+    outline: transparent;
+
+    color: var(--azul);
+}
+
+textarea::-webkit-scrollbar {
+    width: 7px;
+    position: absolute;
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: var(--azul);
+    border-radius: 20px;
+}
+
+textarea::-webkit-scrollbar-track-piece {
+    border-radius: 20px;
+    background-color: var(--branquinho);
+}
+
+.entradas > .arquivo {
+    width: 100%;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background-color: var(--cinzaClaro);
+}
+
+.entradas > .arquivo > label > input {
+    display: none;
+}
+
+.entradas > .arquivo > label {    
+    padding: 14px 40px;
+
+    font-family: var(--bold);
+    font-size: 12px;
+
+    color: var(--branco);
+
+    background-color: var(--azul);
+
+    border-radius: 20px;
+
+    user-select: none;
+
+    transition: .3s ease
+}
+
+.entradas > .arquivo > label:hover {
+    cursor: pointer;
+
+    padding: 15.5px 43px;
+
+    border-radius: 25px;
+}
+
+.entradas > button {
+    padding: 14px 45px;
+
+    font-family: var(--bold);
+    font-size: 12px;
+
+    margin-top: 30px;
+
+    color: var(--branco);
+
+    background-color: var(--azul);
+
+    border: none;
+    border-radius: 20px;
+
+    user-select: none;
+
+    transition: .3s ease;
+}
+
+.entradas > button:hover {
+    cursor: pointer;
+
+    transform: scale(1.05);
+}
+
+main > span {
+    color: var(--branquinho);
+
+    font-size: 22px;
+
+    position: relative;
+    top: -25px;
+}
+
+.resultado{
+    width: 100%;
+    max-height: 400px;
+
+    resize: none;
+
+    padding: 10px 15px;
+    font-size: 19px;
+
+    background-color: var(--cinzaClaro);
+        
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 30px;
+    
+    outline: transparent;
+
+    color: var(--azul);
+
+    overflow-y: scroll;
+}
+
+.resultado p{
+    width: max-content;
+    border: 1px solid #CACACA;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px 0;
+}
+
+input[type="number"]{
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 19px;
+
+    background-color: var(--cinzaClaro);
+        
+    margin-bottom: 20px;
+
+    border: none;
+    border-radius: 30px;
+    
+    outline: transparent;
+
+    color: var(--azul);
+}
+
+.pop-up{
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#alerta{
+    width: 400px;
+    height: 200px;
+
+    background-color: var(--branco);
+
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    
+    background-color: #fff;
+}
+.alerta h3{
+    font-size: 22px;
+    color: var(--cinza);
+}
+.alerta p{
+    font-size: 18px;
+    color: var(--cinza);
+}
+
+.text-alerta{
+    padding: 50px;
+}
+
+.btn-fechar{
+    position: relative;
+    top: -20px;
+    right: -20px;
+}
