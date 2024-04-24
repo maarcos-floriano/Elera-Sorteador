@@ -414,3 +414,29 @@ input[type="number"]{
     top: -20px;
     right: -20px;
 }
+
+.botoes{
+    padding: 14px 45px;
+
+    font-family: var(--bold);
+    font-size: 12px;
+
+    margin-top: 30px;
+
+    color: var(--branco);
+
+    background-color: var(--azul);
+
+    border: none;
+    border-radius: 20px;
+
+    user-select: none;
+
+    transition: .3s ease;
+}
+
+.botoes:hover {
+    cursor: pointer;
+
+    transform: scale(1.05);
+}

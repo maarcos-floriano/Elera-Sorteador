@@ -87,6 +87,7 @@ function preencherTextArea(dados) {
 ganhadores = [];
 function sortear() {
     let quantidade = document.getElementById('qtdItensSorteados').value;
+    document.getElementById('numeroSorteio').innerHTML = quantidade;
 
     if (quantidade > itens.length) {
         alert('A quantidade de itens a serem sorteados não pode ser maior que a quantidade de itens inseridos.');
@@ -113,4 +114,27 @@ function sortear() {
     ganhadores.forEach(function (ganhador) {
         document.getElementById('listaDeGanhadores').innerHTML += '<p>' + ganhador.join('\t') + '</p>';
     });
+}
+
+function sortearNovamente(){
+    document.getElementById('listaDeGanhadores').innerHTML = '';
+    ganhadores = [];
+    let quantidade = document.getElementById('qtdItensSorteados').value;
+
+    for (let i = 0; i < quantidade; i++) {
+        let index = Math.floor(Math.random() * itens.length);
+        let ganhador = itens[index];
+        ganhadores.push(ganhador);
+        itens.splice(index, 1);
+    }
+
+    
+
+    ganhadores.forEach(function (ganhador) {
+        document.getElementById('listaDeGanhadores').innerHTML += '<p>' + ganhador.join('\t') + '</p>';
+    });
+}
+
+function reiniciar(){
+    window.location.reload();
 }
